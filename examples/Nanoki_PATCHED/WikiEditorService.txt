@@ -1,0 +1,16 @@
+<h1>[v:titleLink]</h1>
+<h4>[v:controlLink] Editor <a href='markdown-syntax-reference' title='Markdown syntax reference'>syntax reference</a></h4>
+[v:message]
+<form method='post' action='[v:actionPath]' accept-charset='utf-8' enctype='multipart/form-data'>
+    <p style='display:none'><input type='text' name='[v:checkToken]' value='[v:check]' class='span-12 text preview'/></p>
+    <p><input type='text' name='[v:titleToken]' value='[v:title]' class='span-12 title preview' style='width:470px;'/></p>
+    <p><textarea name='[v:textToken]' rows='40' cols='80' class='span-22 text preview'>[v:text]</textarea></p>
+    [v:fileLink]
+    <div>
+        <input type='hidden' name='[v:countToken]' value='[v:count]'/>
+        <input type='hidden' name='[v:timeToken]' value='[v:time]'/>
+        <input type='hidden' name='[v:token]' value='[v:token]'/>
+        <input type='hidden' name='[v:versionToken]' value='[v:version]'/>
+    </div>
+    <p><input name='action.preview' type='submit' value=' Preview '/></p>
+</form>

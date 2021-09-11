@@ -1,0 +1,9 @@
+<p>Your search — [v:query] — did not match any items.</p>
+
+<p>Suggestions:</p>
+
+<ul>
+    <li>Make sure all words are spelled correctly.</li>
+    <li>Try different keywords.</li>
+    <li>Try more general keywords.</li>
+</ul>

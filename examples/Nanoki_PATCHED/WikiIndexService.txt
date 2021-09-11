@@ -1,0 +1,9 @@
+<h1>[v:title]</h1>
+<h4>[v:description]</h4>
+[v:navigation]
+<br />
+<ul>
+[t:names]
+    <li><a href='[v:href]' title='[v:name]'>[v:name]</a></li>
+[/t:names]
+</ul>

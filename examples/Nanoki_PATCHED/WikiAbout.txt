@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+    <head>
+        <meta http-equiv='content-type' content='text/html; charset=utf-8'/>
+        <meta http-equiv='robots' content='noindex,nofollow'/>
+        <meta name='generator' content='Nanoki'/>
+        <title>Nanoki — About</title>
+        <link rel='stylesheet' href='/etc/screen.css' type='text/css' media='all'/>
+        <link rel='stylesheet' href='/etc/print.css' type='text/css' media='print'/>
+        <link rel='stylesheet' href='/etc/custom-screen.css' type='text/css' media='all'/>
+        <link rel='stylesheet' href='/etc/custom-print.css' type='text/css' media='print'/>
+        <!--[if IE]><link rel='stylesheet' href='/etc/ie.css' type='text/css' media='screen, projection'/><![endif]-->
+        <link rel='icon' href='/etc/iconh.png' type='image/png'/>
+    </head>
+    <body>
+        <div class='container'>  
+        
+            <div class='span-24'>
+                &nbsp;
+            </div>
+            
+            <div class='span-22 prepend-1 append-1 last'>
+                <h1><a href='nanoki' title='Nanoki'>Nanoki</a></h1>
+                <h4>Version [v:version]</h4>
+                
+                <hr/>
+                <h4>System</h4>
+                <p><img src='/etc/runtime.png' alt='runtime' title='Runtime:' style='vertical-align: text-bottom;' height='16' width='16'/> [v:runtime]</p>
+                <p><img src='/etc/memory.png' alt='memory' title='Memory:' style='vertical-align: text-bottom;' height='16' width='16'/> [v:memory]</p>
+                <p><img src='/etc/module.png' alt='module' title='Module:' style='vertical-align: text-bottom;' height='16' width='16'/> [v:module]</p>
+                
+                <hr/>
+                <h4>Colophon</h4>
+                <ul>
+                    <li><a href='http://www.tecgraf.puc-rio.br/~lhf/ftp/lua/#lbase64' title='lbase64'>Base64</a> library by Luiz Henrique de Figueiredo</li>
+                    <li><a href='http://luaforge.net/projects/lzlib/' title='lzlib'>Compression</a> library by Tiago Dionizio</li>
+                    <li><a href='http://code.google.com/p/blueprintcss/' title='Blueprint'>CSS</a> framework by Olav Bjørkøy</li>
+                    <li><a href='http://www.keplerproject.org/luafilesystem/' title='LuaFileSystem'>File</a> library by The Kepler Project</li>
+                    <li><a href='http://www.famfamfam.com/lab/icons/silk/' title='Silk icons'>Icon</a> set by Mark James</li>
+                    <li><a href='http://www.lua.org/' title='The Lua programming language '>Lua</a> by Roberto Ierusalimschy, Luiz Henrique de Figueiredo, and Waldemar Celes</li>
+                    <li><a href='http://www.frykholm.se/files/markdown.lua' title='makdown.lua'>Markdown</a> library by Niklas Frykholm</li>
+                    <li><a href='http://daringfireball.net/projects/markdown/' title='Markdown'>Markdown</a> syntax by John Gruber</li>
+                    <li><a href='http://www.tecgraf.puc-rio.br/~lhf/ftp/lua/#lmd5' title='lmd5'>MD5</a> library by Luiz Henrique de Figueiredo</li>
+                    <li><a href='http://www.tecgraf.puc-rio.br/~diego/professional/luasocket/' title='LuaSocket'>Network</a> library by Diego Nehab</li>
+                    <li><a href='http://www.tecgraf.puc-rio.br/~lhf/ftp/lua/#lrandom' title='lrandom'>PRNG</a> library by Luiz Henrique de Figueiredo</li>
+                    <li><a href='http://interglacial.com/~sburke/tpj/as_html/tpj22.html' title='Unidecode'>Unidecode</a> by Sean M. Burke</li>
+                </ul>
+                
+                <hr/>
+                <h4>License</h4>
+                <p>Copyright © 2007–[v:year] Raphaël Szwarc</p>
+                <p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+
+                <ul>
+                    <li>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</li>
+                    <li>The Software is provided “as is”, without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. In no event shall the authors or copyright holders be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the Software or the use or other dealings in the Software.</li>
+                </ul>
+            </div>
+
+            <div class='span-24'>
+                &nbsp;
+            </div>
+            
+        </div>
+    </body>
+</html>

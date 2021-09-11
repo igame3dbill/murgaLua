@@ -1,0 +1,26 @@
+<h1>[v:title]</h1>
+[v:message]
+<form method='post' action='[v:actionPath]' accept-charset='utf-8' enctype='multipart/form-data'>
+    <table>
+        <tr>
+            <td>
+                Rename <em>[v:name]</em> to <input type='text' name='[v:valueToken]' value='[v:value]' class='preview'/>
+            </td>
+            <td>
+                <input name='action.rename.[v:renameToken]' type='submit' value='Rename'/>  <img src='/etc/warning-sign.png' alt='rename' title='Renaming a page will break any existing link to it.' style='vertical-align: text-bottom;' height='16' width='16'/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Delete <em>[v:name]</em> altogether
+                <input type='text' name='[v:checkToken]' value='[v:check]' style='display:none'/>
+            </td>
+            <td>
+                <input type='hidden' name='[v:countToken]' value='[v:count]'/>
+                <input type='hidden' name='[v:timeToken]' value='[v:time]'/>
+                <input type='hidden' name='[v:token]' value='[v:token]'/>
+                <input name='action.delete.[v:deleteToken]' type='submit' value=' Delete '/> <img src='/etc/exclamation.png' alt='delete' title='Deleting a page cannot be undone.' style='vertical-align: text-bottom;' height='16' width='16'/>
+            </td>
+        </tr>
+    </table>
+</form>

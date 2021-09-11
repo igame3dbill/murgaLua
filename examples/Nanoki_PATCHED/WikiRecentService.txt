@@ -1,0 +1,11 @@
+<h1>[v:title]</h1>
+<h4>[v:description]</h4>
+[t:entries]
+    <hr/>
+    <h4 title='[v:description]'>[v:title]</h4>
+    <ul>
+    [t:items]
+        <li><a href='[v:link]' title='Modified at [v:modification] by [v:by]'>[v:title]</a> at [v:modification] by [v:by]</li>        
+    [/t:items]
+    </ul>
+[/t:entries]

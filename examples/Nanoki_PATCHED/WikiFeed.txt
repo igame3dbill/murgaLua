@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<feed xmlns='http://www.w3.org/2005/Atom'>
+    <generator uri='http://alt.textdrive.com/' version='1.0'>Nanoki</generator>
+    <title>[v:title]</title>
+    <link href='[v:link]' rel='alternate'/>
+    <link href='[v:selfLink]' rel='self'/>
+    <updated>[v:updated]</updated>
+    <icon>/etc/iconh.png</icon>
+    <id>[v:id]</id>
+
+    [t:entries]
+    <entry>
+        <title>[v:title]</title>
+        <link href='[v:link]' rel='alternate'/>
+        <link href='[v:selfLink]' rel='self'/>
+        <id>[v:id]</id>
+        <updated>[v:updated]</updated>
+        <author><name>[v:user]</name><uri>[v:host]</uri></author>
+        <content type='html' xml:base='[v:selfLink]'>[v:content]</content>
+    </entry>
+    [/t:entries]
+</feed>

@@ -1,0 +1,1 @@
+<span class='navigation'>[t:components]<a href='[v:href]' title='[v:title]'>[v:title]</a> → [/t:components][v:title]</span>

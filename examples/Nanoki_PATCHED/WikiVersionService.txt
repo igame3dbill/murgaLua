@@ -1,0 +1,7 @@
+<h1><a href='[v:diffLink]' title='Difference with current revision'>[v:title]</a></h1>
+<h4>Edited on [v:creation] by [v:by]</h4>
+<p class='box'>[v:content]</p>
+<form method='post' action='[v:actionPath]' accept-charset='utf-8' enctype='multipart/form-data'>
+    <p><input name='action.restore' type='submit' value=' Restore '/></p>
+</form>
+

@@ -1,0 +1,16 @@
+<h1>[v:titlePreview]</h1>
+<div class='preview box'>
+    [v:textPreview]
+</div>
+<form method='post' action='[v:actionPath]' accept-charset='utf-8' enctype='multipart/form-data'>
+    <div>
+        <input type='hidden' name='[v:checkToken]' value='[v:check]'/>
+        <input type='hidden' name='[v:countToken]' value='[v:count]' />
+        <input type='hidden' name='[v:timeToken]' value='[v:time]' />
+        <input type='hidden' name='[v:titleToken]' value='[v:title]' />
+        <input type='hidden' name='[v:textToken]' value='[v:text]' />
+        <input type='hidden' name='[v:token]' value='[v:token]' />
+        <input type='hidden' name='[v:versionToken]' value='[v:version]' />
+    </div>
+    <p><input name='action.edit' type='submit' value=' Edit '/> <input name='action.save' type='submit' value=' Save '/></p>
+</form>

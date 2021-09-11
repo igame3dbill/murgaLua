@@ -1,0 +1,13 @@
+<h1>[v:title]</h1>
+<h4>[v:description]</h4>
+<ul>
+[t:hits]
+    <li><a href='[v:href]' title='[v:name]'>[v:name]</a></li>
+[/t:hits]
+</ul>
+<ul>
+[t:names]
+    <li><a href='[v:href]' title='[v:name]'>[v:name]</a></li>
+[/t:names]
+</ul>
+[v:status]

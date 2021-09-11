@@ -1,0 +1,3 @@
+<hr class='navigation'/>
+<p class='navigation'><img src='/etc/[v:type].png' alt='[v:type]' title='[v:title]' style='vertical-align: text-bottom;' height='16' width='16'/> <[v:tag]>[v:text]</[v:tag]></p>
+<hr class='navigation'/>

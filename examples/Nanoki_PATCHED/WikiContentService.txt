@@ -1,0 +1,14 @@
+<h1>[v:editorLink]</h1>
+<h4>Published on <a href='[v:dateLink]' title='Published on [v:creation]. Edited on [v:modification] by [v:by].'>[v:creation]</a> [v:tag]</h4>
+[v:message]
+[v:content]
+[t:link]
+    <div class='navigation'>
+    <br/><br/>
+    <hr/>
+    [t:names]
+        <a href='[v:href]' title='[v:name]'>[v:name]</a>&nbsp; 
+    [/t:names]
+    </div>
+[/t:link]
+

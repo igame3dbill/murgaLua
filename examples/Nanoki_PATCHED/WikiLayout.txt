@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+    <head>
+        <meta http-equiv='content-type' content='text/html; charset=utf-8'/>
+        <meta http-equiv='robots' content='[v:robot]'/>
+        <meta name='generator' content='Nanoki'/>
+        <title>[v:title]</title>
+        <link rel='stylesheet' href='/etc/screen.css' type='text/css' media='all'/>
+        <link rel='stylesheet' href='/etc/print.css' type='text/css' media='print'/>
+        <link rel='stylesheet' href='/etc/custom-screen.css' type='text/css' media='all'/>
+        <link rel='stylesheet' href='/etc/custom-print.css' type='text/css' media='print'/>
+        <!--[if IE]><link rel='stylesheet' href='/etc/ie.css' type='text/css' media='screen, projection'/><![endif]-->
+        <link rel='icon' href='/etc/icon.png' type='image/png'/>
+        [v:feedLink]
+        <base href='[v:baseLink]'/>
+    </head>
+    <body>
+        <div class='container'>  
+        
+            <div class='span-24'>
+                &nbsp;
+            </div>
+            
+            <div class='span-18 prepend-1 label'>
+                [v:path]
+            </div>
+
+            <div class='span-4 append-1 last label navigation'>
+                <a href='[v:indexLink]' title='Index by title'>Index</a> | <a href='[v:dateLink]' title='Index by date'>Date</a> | <a href='/recent' title='Recent changes'>Recent</a>
+            </div>
+
+            <div class='span-18 prepend-1'>
+                &nbsp;
+            </div>
+
+            <form method='get' action='/search' accept-charset='utf-8' enctype='application/x-www-form-urlencoded'>
+                <div class='span-4 append-1 last'>
+                    <input type='text' value='[v:query]' name='q' maxlength='64' class='span-4 navigation' title='Search by title'/>
+                </div>
+            </form>
+
+            <div class='span-24'>
+                &nbsp;
+            </div>
+
+            <div class='span-22 prepend-1 append-1 last'>
+                [v:content]
+            </div>
+
+            <div class='span-24'>
+                &nbsp;
+            </div>
+            
+        </div>
+    </body>
+</html>

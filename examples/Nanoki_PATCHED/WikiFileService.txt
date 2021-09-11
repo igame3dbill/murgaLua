@@ -1,0 +1,29 @@
+<h1>[v:title]</h1>
+<h4>[v:description]</h4>
+[v:message]
+<form method='post' action='[v:action]' accept-charset='utf-8' enctype='multipart/form-data'>
+    <table>
+        [t:files]
+        <tr>
+            <td><a href='[v:nameLink]' title='[v:type]'>[v:name]</a></td>
+            <td style='text-align:right;' title='[v:sizeTitle]'>[v:size]</td>
+            <td><span title='[v:dateTitle]'>[v:date]</span></td>
+            <td>
+                <input type='image' src='/etc/delete.png' name='action.delete.[v:nameToken]' alt='delete' title='Delete' style='vertical-align: text-bottom;'/>
+                <input type='hidden' name='[v:nameToken].[v:fileSizeToken]' value='[v:fileSize]'/>
+                <input type='hidden' name='[v:nameToken].[v:fileTimeToken]' value='[v:fileTime]'/>
+            </td>
+        </tr>
+        [/t:files]
+        <tr>
+            <td colspan='3'><input type='file' name='[v:fileToken]'/></td>
+            <td><input type='image' src='/etc/add.png' name='action.add' title='Add a new file' style='vertical-align: text-bottom;'/></td>
+        </tr>
+    </table>
+    <p style='display:none'><input type='text' name='[v:checkToken]' value='[v:check]'/></p>
+    <div>
+        <input type='hidden' name='[v:countToken]' value='[v:count]' />
+        <input type='hidden' name='[v:timeToken]' value='[v:time]'/>
+        <input type='hidden' name='[v:token]' value='[v:token]'/>
+    </div>
+</form>

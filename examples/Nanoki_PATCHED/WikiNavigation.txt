@@ -1,0 +1,11 @@
+<table class='navigation'>
+    [t:rows]
+        <tr>
+            [t:columns]
+                <td>
+                    [v:value]
+                </td>
+            [/t:columns]
+        </tr>
+    [/t:rows]
+</table>

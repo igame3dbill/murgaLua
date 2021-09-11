@@ -1,0 +1,187 @@
+Nanoki is a simple [wiki engine][100] implemented in [Lua][101], allowing you to create, edit, and link web pages easily.
+
+----
+
+###Run Nanoki
+
+Start Nanoki from the command line:
+
+    cd Nanoki
+    lua Nanoki.lua . localhost 1080
+
+The above command will start Nanoki on your local host at port 1080, using the local directory for storage:
+
+[http://localhost:1080/][1000]
+
+Command synopsis:
+
+    Nanoki [location] [address] [port] [not|forwarded] [not|secure]
+
+`location` tells Nanoki where to store its data.    
+`address` indicates which network address to bind the Nanoki server to.    
+`port` indicates what port number to use.    
+`forwarded` indicates whether `x-forwarded-for` should be trusted.    
+`secure` indicates whether `https` should be used.    
+
+![Run][1]
+
+----
+
+###Create a page
+
+To create a new page, type its name in your browser address bar:
+
+![New][2]
+
+If the page doesn't exists yet, Nanoki will redirect you to the page editor:
+
+![New Editor][3]
+
+----
+
+###Edit a page
+
+To edit a page, click on its title. This will take you to the page editor:
+
+![Editor][4]
+
+The editor uses [Markdown syntax][102] to describe the page content.    
+
+To save your text, press _Preview_ and then _Save_.
+
+----
+
+###Upload a file
+
+From the _editor_, you can upload files to Nanoki:
+
+![File][5]
+
+Each page can have its own files. You can refer to those files like so:
+
+    ![Run][1]
+    [1]: nanoki/file.run.png
+   
+File link synopsis:
+
+    [page]/file.[file]
+
+`page` is the name of the page under which the file is located.    
+`file` is the file name.
+
+----
+
+###Control panel
+From the _editor_, you can access the _control panel_ to rename or delete a page:
+
+![Control][17]
+
+----
+
+###Revision
+
+From the _editor_, you can access a page revision history by clicking on its title:
+
+![Revision][6]
+
+Clicking a revision number will display the page content as it was then.  
+
+----
+
+###Revision differences
+
+From the _revision_ page, you can access the revision differences by clicking on its title:
+
+![Revision differences][7]
+
+----
+
+###Related pages
+
+Each page keep tracks of which other pages links to it:
+
+![Related][8]
+
+----
+
+###Breadcrumb navigation
+
+Each page reflects its location using a _breadcrumb_ trail:
+
+![Breadcrumb][9]
+
+----
+
+###Index navigation
+
+Nanoki provides a table of content, indexed by page title:
+
+![Index][10]
+
+----
+
+###Date navigation
+
+The date navigation indexes pages by their publication date: 
+
+![Date][11]
+
+----
+
+###Recent changes
+
+The _recent changes_ page lists what has changed in Nanoki recently:
+
+![Recent][12]
+
+----
+
+###Search
+
+The _search_ allows to locate pages by their title:
+
+![Search][13]
+
+----
+
+###XML feed
+
+Aside from the _editor_, most pages provide an [XML feed][103]:
+
+![Feed][14]
+
+![Feed view][15]
+
+----
+
+### System page
+
+The [system][104] page provides basic information about Nanoki itself:
+
+![System][16]
+
+[1]: nanoki/file.run.png
+[2]: nanoki/file.new.png
+[3]: nanoki/file.new-editor.png
+[4]: nanoki/file.editor.png
+[5]: nanoki/file.file.png
+[6]: nanoki/file.revision.png
+[7]: nanoki/file.revision-diff.png
+[8]: nanoki/file.related.png
+[9]: nanoki/file.breadcrumb.png
+[10]: nanoki/file.index.png
+[11]: nanoki/file.date.png
+[12]: nanoki/file.recent.png
+[13]: nanoki/file.search.png
+[14]: nanoki/file.feed.png
+[15]: nanoki/file.feed-view.png
+[16]: nanoki/file.system.png
+[17]: nanoki/file.control.png
+
+[100]: http://en.wikipedia.org/wiki/Wiki
+[101]: http://www.lua.org/about.html
+[102]: http://daringfireball.net/projects/markdown/syntax
+[103]: http://en.wikipedia.org/wiki/Atom_(standard)
+[104]: a
+
+[1000]: http://localhost:1080/

@@ -1,0 +1,5 @@
+<h1>[v:title]</h1>
+<h4>[v:description]</h4>
+<div class='box'>
+    [v:content]
+</div>

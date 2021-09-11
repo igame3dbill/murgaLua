@@ -1,0 +1,11 @@
+<h1><a href='[v:link]' title='Revision № [v:version]'>[v:title]</a></h1>
+<h4>[v:description]</h4>
+[t:entries]
+    <hr/>
+    <h4 title='[v:description]'>[v:title]</h4>
+    <ul>
+    [t:items]
+        <li><a href='[v:link]' title='Revision № [v:version] edited on [v:date] by [v:by]'>№ [v:version]</a> at [v:time] by [v:by]</li>        
+    [/t:items]
+    </ul>
+[/t:entries]
