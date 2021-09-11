@@ -1,0 +1,187 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<meta name="generator" content="HTML Tidy for Windows (vers 14 February 2006), see www.w3.org"><title>murgaLua index</title>
+
+<link rel="STYLESHEET" type="text/css" href="murgaDoc.css">
+</head>
+<body>
+<div style="float: left; margin-right: 10px;"><img style="width: 167px; height: 155px;" alt="MurgaLua Logo" src="images/murgaLua.png"></div>
+<h1>murgaLua 0.6.6</h1>
+Copyright (C) 2006-8 John Murga<br>
+<br>
+<a href="murgaLua-0.6.6.tar.gz">Download Here</a> - <a href="murgaLua.html">Documentation Here</a><br>
+<br>
+<a href="http://www.murga-projects.com/wiki">Wiki opened</a>
+on 24th March 2008.<br>
+<a href="http://www.murga-projects.com/forum">Forum opened</a>
+on&nbsp;2nd April 2007, please visit for announcements.<br>
+<span style="font-style: italic;">(If you find murgaLua
+useful please post or send me an e-mail)</span><br>
+<h2>Version History</h2>
+<h3>murgaLua 0.6.6</h3>
+<span style="font-style: italic; font-weight: bold;">24th
+of March of 2008</span><br>
+Maintenance release ... Mostly upgrades and community driven fixes.<br>
+<ul>
+<li>Upgraded FLTK to 1.1.8 RC3 and fixed some binding conflicts.</li>
+<li>Upgraded sqLite to 3.5.7 and the ralted binding to 3.6
+(adds new features).</li>
+<li>Implemented some additional FLTK methods (Fl_Window:icon(),
+fl_xid, fl_find, etc).</li>
+<li>Creaded a murgaLua.fileCopy method for farter file copy
+operations.</li>
+<li>Made many minor changes to build scripts and documentation.</li>
+</ul>
+<h3>murgaLua 0.6.4</h3>
+<span style="font-style: italic; font-weight: bold;">24th
+of February of 2008</span><br>
+The first FULL release for 2008 ... Special thanks to mikshaw and Tobi
+for their contributions.<br>
+<ul>
+<li>Fixed a few regressions present in the 0.6.0 preview
+release.</li>
+<li>Upgraded&nbsp;Lua&nbsp;to the latest 5.1.3 core
+build.</li>
+<li>More FLTK bug fixes and&nbsp;binding corrections
+(read_image,&nbsp;FL_Browser improvements).</li>
+<li>Implemented some customizations to FLTK that allow for
+image saving and bulk loading.</li>
+<li>Implemented the FLTK off-screen API as new (and more
+reliable) object.</li>
+<li>Additional functions for FLTK event debugging, menu
+handling and data association.</li>
+<li>Integrated&nbsp;gzip, zlib and random number api's as
+well as some other functions.</li>
+<li>Tweaks to some existing code stemming from contributions on
+the forum.</li>
+<li>Bundled mikshaw's widgets demo as well as Tobi's converter
+and the Nanoki lua Wiki.</li>
+<li>Minor updates to the documentation.</li>
+</ul>
+<h3>murgaLua 0.6.0</h3>
+<span style="font-style: italic; font-weight: bold;">20th
+of January of 2008</span><br>
+More of a maintenance release with several upgrades and bug-fixes.<br>
+<ul>
+<li>MurgaLua compiler&nbsp;beta (<span style="font-weight: bold;">see COMPILER-LICENCE for terms of
+use</span>).</li>
+<li>FLTK bug fixes, binding corrections and upgrade to build
+r6020.</li>
+<li>Lots of build tweaks for all platforms (in terms of size,
+options, etc).</li>
+<li>Upgrades to luasocket, copas, luafilesystem and lsqlite.</li>
+<li>Integrated <a href="http://www.keplerproject.org/md5/">md5</a>,
+and added a couple of HEX encoding functions.</li>
+<li>Minor updates to the documentation.</li>
+<li>Added a few additional methods to the FLTK binding
+implementation.</li>
+</ul>
+<h3>murgaLua 0.5.5</h3>
+<span style="font-style: italic; font-weight: bold;">30th
+of July of 2007</span><br>
+A consolidation of the 5.5 features plus some API changes and new
+features.<br>
+<ul>
+<li>MAJOR changes to the XML API and addition of the <a href="http://lua-users.org/lists/lua-l/2004-01/msg00350.html">lua-iostring</a>
+library.</li>
+<li>Fl_Text_Buffer, Fl_Text_Display, Fl_Text_Editor are back
+and they work now (!).</li>
+<li>Decent database example and documention for sqLite usage
+(Uses Fl_Text_* too!).</li>
+<li>Fixed some build, FLTK issues and misc warnings (fl_ask has
+been removed).</li>
+<li>Started re-structuring examples and documentation.</li>
+<li>Also integrated <a href="http://www.keplerproject.org/copas/">Copas</a>, <a href="http://lua-users.org/wiki/LuaModuleLzo">LuaLzo</a>
+and <a href="http://www.keplerproject.org/luafilesystem/">LuaFileSystem</a>.</li>
+<li>LuaFileSystem now takes over from the previous murgaLua
+functionality.<br>
+<span style="font-style: italic; font-weight: bold;">This
+will cause compability issues, but I wanted to standardize on
+LuaFileSystem.</span></li>
+</ul>
+<h3>murgaLua 0.5.PREVIEW</h3>
+<span style="font-style: italic; font-weight: bold;">30th
+of June of 2007</span><br>
+PREVIEW release that only went out to the <a href="http://www.murga-projects.com/forum">forum</a>
+users.<br>
+<ul>
+<li>New function "murgaLua.createFltkTimer()" - GREAT for
+really responsive animation and stuff.</li>
+<li>New function "murgaLua.getHostOsName()" returns one of
+"linux", "windows" or "macos".</li>
+<li>New function "murgaLua.sleep(miliseconds)" (reliable system
+level).</li>
+<li>Fixed a few minor FLTK issues.</li>
+<li>XML api additions (will document later).</li>
+<li>convertFluidToMurguaLua fixes based on forum feedback.</li>
+</ul>
+<h3>murgaLua 0.4.1</h3>
+<span style="font-style: italic; font-weight: bold;">2nd
+of May of 2007</span><br>
+Patch release to tidy up the 0.4 release and provide MacOS support out
+of the box again.<br>
+<ul>
+<li>Lua core upgraded to 5.1.2, this fixes several Lua specific
+bugs.</li>
+<li>MacOs-Intel binaries are now included with the distribution.<br>
+(Thanks to the guys over at <a href="http://www.igame3d.com/">http://www.igame3d.com/</a>).</li>
+<li>Fixed a build issue that ment that some things like
+"io.popen" where not available.</li>
+<li>Fixed a couple of inconsistencies in the code and build
+file.</li>
+<li>Some tweaks to the docs too :-)</li>
+</ul>
+<h3>murgaLua 0.4</h3>
+<span style="font-style: italic; font-weight: bold;">2nd
+of April of 2007</span><br>
+Mainly a bugfix release although it contains a few interesting
+additions.<br>
+Coincides with the relocation of the web-site and the opening of a
+projects forum.<br>
+<ul>
+<li>Added two new utility functions to the "murgaLua" library
+(printDebug and filterTable).</li>
+<li>Added more examples for multi-line edit boxes, menus, XML,
+and a few other things.</li>
+<li>Further improved the build process (specially for Win32)
+and re-built against latest APIs.</li>
+<li>Fl_Text_Buffer, Fl_Text_Display and Fl_Text_Editor are now
+officially not supported.<br>
+<span style="font-style: italic;">(There are pretty
+bloaty and hard to use, see the multi-line example for fairly good
+alternatives)</span></li>
+<li>Fixed convertFluidToMurgaLua.sh and added
+convertFluidToMurgaLua.lua (by Markku Kotiaho).<br>
+<span style="font-style: italic;">(Thanks to Markku
+Windows users without MingW/Cygwin can now convert Fluid generated UIs).</span></li>
+<li>Fixed a few more FLTK bugs.</li>
+<li>Thanks to Jeff Campbell for his boundless support.</li>
+</ul>
+<h3>murgaLua 0.3</h3>
+<span style="font-style: italic; font-weight: bold;">12th
+of January of 2007</span><br>
+The first public release since murgaLua 0.1.<br>
+Incorporates many separate improvements I have been able to make during
+the course of my travels.<br>
+<ul>
+<li>Revamped the XML API to provide more complete capabilities.</li>
+<li>Further improved the build process for multiple platforms.</li>
+<li>Upgraded the SQL API to sqlite 3 (dynamically linked on
+Linux).</li>
+<li>Created more examples and tests.</li>
+<li>Fixed some FLTK bugs.</li>
+</ul>
+<h3>murgaLua 0.2</h3>
+Was created at a time when I was unable to update the documentation to
+reflect the changes.<br>
+<ul>
+<li>Many changes and fixes to the build process.</li>
+<li>Thanks to Mike Butler, he got murgaLua working on the Mac.</li>
+<li>Thanks to mikshaw (from the DammSmall forum), who came up
+with some good examples.</li>
+</ul>
+<h3>murgaLua 0.1</h3>
+<span style="font-weight: bold; font-style: italic;">24th
+of July 2006</span><br>
+Initial release<br>
+</body></html>

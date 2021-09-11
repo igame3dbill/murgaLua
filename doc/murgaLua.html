@@ -1,0 +1,994 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<meta name="generator" content="HTML Tidy for Windows (vers 14 February 2006), see www.w3.org"><title>murgaLua documentation</title>
+
+<link rel="STYLESHEET" type="text/css" href="murgaDoc.css">
+</head>
+<body onload='pageIndex("Contents :")'>
+<div id="contents"></div>
+<div style="float: left; margin-right: 10px;"><img style="width: 167px; height: 155px;" alt="MurgaLua Logo" src="images/murgaLua.png"></div>
+<script src="murgaDoc.js" type="text/javascript">
+</script>
+<h1>murgaLua 0.6.6</h1>
+Copyright (C) 2006-8 John Murga<br>
+<br>
+<br>
+<div style="position: absolute; width: 260px; left: 197px; top: 100px; height: 100px;"><big><big>User
+Guide &amp; Reference</big></big></div>
+<br>
+<br>
+<br>
+<br>
+<h2>Version History</h2>
+<h3>murgaLua 0.6.6</h3>
+<span style="font-style: italic; font-weight: bold;">24th
+of March of 2008</span><br>
+Maintenance release ... Mostly upgrades and community driven fixes.<br>
+<ul>
+<li>Upgraded FLTK to 1.1.8 RC3 and fixed some binding conflicts.</li>
+<li>Upgraded sqLite to 3.5.7 and the ralted binding to 3.6
+(adds new features).</li>
+<li>Implemented some additional FLTK methods (Fl_Window:icon(),
+fl_xid, fl_find, etc).</li>
+<li>Creaded a murgaLua.fileCopy method for farter file copy
+operations.</li>
+<li>Made many minor changes to build scripts and documentation.</li>
+</ul>
+<h3>murgaLua 0.6.4</h3>
+<span style="font-style: italic; font-weight: bold;">24th
+of February of 2008</span><br>
+The first FULL release for 2008 ... Special thanks to mikshaw and Tobi
+for their contributions.<br>
+<ul>
+<li>Fixed a few regressions present in the 0.6.0 preview
+release.</li>
+<li>Upgraded&nbsp;Lua&nbsp;to the latest 5.1.3 core
+build.</li>
+<li>More FLTK bug fixes and&nbsp;binding corrections
+(read_image,&nbsp;FL_Browser improvements).</li>
+<li>Implemented some customizations to FLTK that allow for
+image saving and bulk loading.</li>
+<li>Implemented the FLTK off-screen API as new (and more
+reliable) object.</li>
+<li>Additional functions for FLTK event debugging, menu
+handling and data association.</li>
+<li>Integrated&nbsp;gzip, zlib and random number api's as
+well as some other functions.</li>
+<li>Tweaks to some existing code stemming from contributions on
+the forum.</li>
+<li>Bundled mikshaw's widgets demo as well as Tobi's converter
+and the Nanoki lua Wiki.</li>
+<li>Minor updates to the documentation.</li>
+</ul>
+<h3>murgaLua 0.6.0</h3>
+<span style="font-style: italic; font-weight: bold;">20th
+of January of 2008</span><br>
+More of a maintenance release with several upgrades and bug-fixes.<br>
+<ul>
+<li>MurgaLua compiler&nbsp;beta (<span style="font-weight: bold;">see COMPILER-LICENCE for terms of
+use</span>).</li>
+<li>FLTK bug fixes, binding corrections and upgrade to build
+r6020.</li>
+<li>Lots of build tweaks for all platforms (in terms of size,
+options, etc).</li>
+<li>Upgrades to luasocket, copas, luafilesystem and lsqlite.</li>
+<li>Integrated <a href="http://www.keplerproject.org/md5/">md5</a>,
+and added a couple of HEX encoding functions.</li>
+<li>Minor updates to the documentation.</li>
+<li>Added a few additional methods to the FLTK binding
+implementation.</li>
+</ul>
+<h3>murgaLua 0.5.5</h3>
+<span style="font-style: italic; font-weight: bold;">30th
+of July of 2007</span><br>
+A consolidation of the 5.5 features plus some API changes and new
+features.<br>
+<ul>
+<li>MAJOR changes to the XML API and addition of the <a href="http://lua-users.org/lists/lua-l/2004-01/msg00350.html">lua-iostring</a>
+library.</li>
+<li>Fl_Text_Buffer, Fl_Text_Display, Fl_Text_Editor are back
+and they work now (!).</li>
+<li>Decent database example and documention for sqLite usage
+(Uses Fl_Text_* too!).</li>
+<li>Fixed some build, FLTK issues and misc warnings (fl_ask has
+been removed).</li>
+<li>Started re-structuring examples and documentation.</li>
+<li>Also integrated <a href="http://www.keplerproject.org/copas/">Copas</a>, <a href="http://lua-users.org/wiki/LuaModuleLzo">LuaLzo</a>
+and <a href="http://www.keplerproject.org/luafilesystem/">LuaFileSystem</a>.</li>
+<li>LuaFileSystem now takes over from the previous murgaLua
+functionality.<br>
+<span style="font-style: italic; font-weight: bold;">This
+will cause compability issues, but I wanted to standardize on
+LuaFileSystem.</span></li>
+</ul>
+<h3>murgaLua 0.5.PREVIEW</h3>
+<span style="font-style: italic; font-weight: bold;">30th
+of June of 2007</span><br>
+PREVIEW release that only went out to the <a href="http://www.murga-projects.com/forum">forum</a>
+users.<br>
+<ul>
+<li>New function "murgaLua.createFltkTimer()" - GREAT for
+really responsive animation and stuff.</li>
+<li>New function "murgaLua.getHostOsName()" returns one of
+"linux", "windows" or "macos".</li>
+<li>New function "murgaLua.sleep(miliseconds)" (reliable system
+level).</li>
+<li>Fixed a few minor FLTK issues.</li>
+<li>XML api additions (will document later).</li>
+<li>convertFluidToMurguaLua fixes based on forum feedback.</li>
+</ul>
+<h3>murgaLua 0.4.1</h3>
+<span style="font-style: italic; font-weight: bold;">2nd
+of May of 2007</span><br>
+Patch release to tidy up the 0.4 release and provide MacOS support out
+of the box again.<br>
+<ul>
+<li>Lua core upgraded to 5.1.2, this fixes several Lua specific
+bugs.</li>
+<li>MacOs-Intel binaries are now included with the distribution.<br>
+(Thanks to the guys over at <a href="http://www.igame3d.com/">http://www.igame3d.com/</a>).</li>
+<li>Fixed a build issue that ment that some things like
+"io.popen" where not available.</li>
+<li>Fixed a couple of inconsistencies in the code and build
+file.</li>
+<li>Some tweaks to the docs too :-)</li>
+</ul>
+<h3>murgaLua 0.4</h3>
+<span style="font-style: italic; font-weight: bold;">2nd
+of April of 2007</span><br>
+Mainly a bugfix release although it contains a few interesting
+additions.<br>
+Coincides with the relocation of the web-site and the opening of a
+projects forum.<br>
+<ul>
+<li>Added two new utility functions to the "murgaLua" library
+(printDebug and filterTable).</li>
+<li>Added more examples for multi-line edit boxes, menus, XML,
+and a few other things.</li>
+<li>Further improved the build process (specially for Win32)
+and re-built against latest APIs.</li>
+<li>Fl_Text_Buffer, Fl_Text_Display and Fl_Text_Editor are now
+officially not supported.<br>
+<span style="font-style: italic;">(There are pretty
+bloaty and hard to use, see the multi-line example for fairly good
+alternatives).</span></li>
+<li>Fixed convertFluidToMurgaLua.sh and added
+convertFluidToMurgaLua.lua (by Markku Kotiaho).<br>
+<span style="font-style: italic;">(Thanks to Markku
+Windows users without MingW/Cygwin can now convert Fluid generated UIs).</span></li>
+<li>Fixed a few more FLTK bugs.</li>
+<li>Thanks to Jeff Campbell for his boundless support.</li>
+</ul>
+<h3>murgaLua 0.3</h3>
+<span style="font-style: italic; font-weight: bold;">12th
+of January of 2007</span><br>
+The first public release since murgaLua 0.1.<br>
+Incorporates many separate improvements I have been able to make during
+the course of my travels.<br>
+<ul>
+<li>Revamped the XML API to provide more complete capabilities.</li>
+<li>Further improved the build process for multiple platforms.</li>
+<li>Upgraded the SQL API to sqlite 3 (dynamically linked on
+Linux).</li>
+<li>Created more examples and tests.</li>
+<li>Fixed some FLTK bugs.</li>
+</ul>
+<h3>murgaLua 0.2</h3>
+Was created at a time when I was unable to update the documentation to
+reflect the changes.<br>
+<ul>
+<li>Many changes and fixes to the build process.</li>
+<li>Thanks to Mike Butler, he got murgaLua working on the Mac.</li>
+<li>Thanks to mikshaw (from the DammSmall forum), who came up
+with some good examples.</li>
+</ul>
+<h3>murgaLua 0.1</h3>
+<span style="font-weight: bold; font-style: italic;">24th
+of July 2006</span><br>
+Initial release<br>
+<h2>Introduction</h2>
+<h3>Why do we need yet another platform ?</h3>
+<p>murgaLua was born from a frustration with the size and
+licensing of some of the development tools I have been using. I am a
+Java developer by trade, but for my personal projects I wanted
+something that was better to deploy, something that :</p>
+<ul>
+<li>Could provide nice GUI's, Networking, Databases &amp;
+XML in a much smaller runtime (about 500k).</li>
+<li>Would allow me to create rich applications easily
+(preferably with a GUI builder)</li>
+<li>Must deploy to both Linux and Windows with no changes to my
+code.</li>
+<li>I didn't want a completely cryptic and propriety language.</li>
+</ul>
+<p>Now, there are many things on the market that fulfilled most
+of those criteria, however, there is nothing that fulfills all of them
+or that comes close in terms of size.</p>
+<p>So I decided to see what I could do ...</p>
+<h3>And what did I do ?</h3>
+<p>The first step was to find a core language that was small,
+easy to learn, portable, and that had advanced features.</p>
+<p>I settled on Lua (http://www.lua.org/), it is popular in the
+embedded and game development space and appeared to be easy to bind to.</p>
+<p>The next step was finding bindings that where rich and small
+enough, I found that the Lua community had done most of that work for
+me :</p>
+<ul>
+<li>I initially ported lua-httpd
+(http://www.steve.org.uk/Software/lua-httpd/) to Win32 and Linux, but I
+found it too limited.</li>
+<li>LuaSocket
+(http://www.cs.princeton.edu/~diego/professional/luasocket/), was
+larger and more complex but ultimately much more flexible.</li>
+<li>LuaSqlite (http://luasqlite.luaforge.net/lsqlite.html)
+provided a solid and light ANSI SQL RDBMS, so that was a no brainer.</li>
+</ul>
+When it came to my XML requirements I found nothing that really
+addressed my needs (in terms of size and speed), so I adapted some code
+I had seen for TinyXML and made it the foundation for my new binding,
+which I am still adding to right now.<br>
+<br>
+GUI was the next problem, and it didn't seem easy to solve ... However,
+I stumbled across lua-fltk (http://lua-fltk.sourceforge.net/), and this
+proved to me that a tiny runtime for both Linux and Windows WAS
+possible with FLTK. Unfortunately the existing bindings where VERY
+basic and out of date and there was nothing I could use, as I wanted
+something that would work with new versions of FLTK and Lua and that I
+could improve ... So I hacked around and knocked up my own binding.<br>
+<br>
+Having settled on FLTK I wondered if it may be possible to use it's
+basic GUI builder (FLUID) to generate my code, and much my to my
+surprise after less than an hour I had written a utility to convert
+it's generated code to my new murgaLua bindings.<br>
+<br>
+My objective was complete.<br>
+<h3>So what's actually included ?</h3>
+<p>The murgaLua distribution includes all required binaries along
+with examples and all the source and documentation for my code and used
+libraries.</p>
+<p>Basically everything you could need for developing with
+murgaLua.</p>
+<p>This is what's in this archive :</p>
+<ul>
+<li>The murgaLua binaries for Windows, Linux and MacOs (the
+runtime).</li>
+<li>FLUID - (F)ltk (U)ser (I)nterface (D)esigner - GUI builder
+binaries compiled for Windows, Linux and MacOs.</li>
+<li>"convertFluidToMurgaLua" murgaLua program for coverting
+FLUID "cxx" files.</li>
+<li>Source for all the used FLTK bindings.</li>
+<li>Source for murgaLua itself.</li>
+<li>Documentation for all the APIs (even FLTK).<br>
+<span style="font-style: italic;">( FTLK docs are</span>
+<a style="font-style: italic;" href="fltk/index.html">here</a><span style="font-style: italic;">, LuaSocket docs are</span>
+<a style="font-style: italic;" href="../3rd-party/luasocket-2.0.2-MOD/doc/introduction.html">here</a><span style="font-style: italic;">, and the LuaSQLite3
+distribution is</span> <a style="font-style: italic;" href="../3rd-party/lsqlite3-6-MOD/doc/lsqlite3.html">here</a><span style="font-style: italic;">).</span></li>
+</ul>
+If for any reason you want to rebuild murgaLua or port it to another
+platform you'll also need the following :<br>
+<ul>
+<li>The FLTK toolkit (1.1.8).</li>
+<li>Lua itself (5.1.x)</li>
+<li>SqLite (3.5.x)</li>
+</ul>
+For your convenience I have mirrored the files at :<br>
+<a style="font-style: italic;" href="http://www.murga.org/devPages/murgaLua/files/"><br>
+</a>
+<div style="margin-left: 40px;"><a style="font-style: italic;" href="http://www.murga-projects.com/murgaLua/files/">http://www.murga-projects.com/murgaLua/files/</a><br>
+<br>
+</div>
+A support forum and improved documentation will follow.<br>
+<h3>How do I install / deploy it</h3>
+<p>Well ... There isn't really any installing, just extract the
+archive and run the executable for your platform.</p>
+<p>Under Windows I would recommend installing MSys (<a href="http://www.mingw.org/msys.shtml">http://www.mingw.org/msys.shtml</a>)
+or Cygwin (<a href="http://cygwin.com/">http://cygwin.com/</a>)
+to get BASH, RXVT and all those nice UNIX things that Windows lacks.</p>
+<p>Under Linux I'd recommend copying the murgaLua executable to
+"/usr/bin", this way you'll be able to add "#!/usr/bin/murgaLua" at the
+start of your scripts and CHMOD them so that they can run as normal
+UNIX scripts.</p>
+<h2>A walk through</h2>
+<h3>Crash course in LUA</h3>
+<p>Lua is a lean programming language that combines simple
+procedural syntax with powerful constructs for handling data and
+extensible semantics. It is also dynamically typed, which releases you
+from the burden of declaring variables, and has advanced features like
+automatic memory management and garbage collection to make sure your
+programs still run well.<br>
+<br>
+Another neat thing about Lua is that it provides meta-mechanisms for
+implementing features instead of bloating itself with too many features
+to remember. For example, Lua is not a object-oriented language, but it
+provided mechanisms for implementing classes and inheritance if its a
+feature that is important to you.<br>
+<br>
+Tables deserve special mention, as they really are the foundation for
+data storage in Lua. You can write pseudo-classes with them, they can
+be arrays, they are FAST, they can be pretty much whatever you want and
+the syntax to manipulate them is pretty cool.</p>
+<p>Anyway, an in-depth discussion on the syntax and usage of Lua
+is out of the scope of this document ... And people have explained it
+better than I could have. Have a look at the following links :</p>
+<p style="margin-left: 40px;">A nice overview from the
+always great Wikipedia :<br>
+<a href="http://en.wikipedia.org/wiki/Lua_programming_language"><span style="font-style: italic;">http://en.wikipedia.org/wiki/Lua_programming_language</span></a></p>
+<p style="margin-left: 40px;">A cool tutorial from the
+DeveloperWorks web-site :<br>
+<a style="font-style: italic;" href="http://www-128.ibm.com/developerworks/library/l-lua.html?ca=drs-">http://www-128.ibm.com/developerworks/library/l-lua.html?ca=drs-</a></p>
+<p style="margin-left: 40px;">An overview to the language
+by the people who created Lua :<br>
+<a href="http://www.lua.org/spe.html"><span style="font-style: italic;">http://www.lua.org/spe.html</span></a></p>
+<p style="margin-left: 40px;">The official manual :<br>
+<a href="http://www.lua.org/manual/5.1/"><span style="font-style: italic;">http://www.lua.org/manual/5.1/</span></a></p>
+<div style="margin-left: 40px;">This is an online version
+of the first edition of the "Programming in Lua" book :<br>
+<a style="font-style: italic;" href="http://www.lua.org/pil/">http://www.lua.org/pil/</a>
+(Or buy the new edition - <a style="font-style: italic;" href="http://www.inf.puc-rio.br/%7Eroberto/pil2/">http://www.inf.puc-rio.br/~roberto/pil2/</a>)<br>
+<br>
+Tables deserve a few tutorials of their own :<br>
+<a href="http://lua-users.org/wiki/TablesTutorial"><span style="font-style: italic;">http://lua-users.org/wiki/TablesTutorial</span></a><br>
+<a href="http://www.gammon.com.au/forum/bbshowpost.php?bbsubject_id=6036"><span style="font-style: italic;">http://www.gammon.com.au/forum/bbshowpost.php?bbsubject_id=6036</span></a><br>
+</div>
+<br>
+<h3>Your first program</h3>
+<p>I guess your first program would have to be the ubiquitous
+"Hello World".</p>
+<p>If you think it kinda sucks you may want to skip to the next
+tutorial :-)</p>
+<p>If not, so open up a file in the directory you extracted this
+archive to (normally named "murgaLua").</p>
+<p>And type the following :</p>
+<code><br>
+fltk.fl_message("Hello Word")<br>
+print("Hello World")<br>
+<br>
+</code><br>
+Save the file as "helloWorld.lua", and then run at the prompt :<br>
+<code><br>
+bin/murgaLua helloWorld.lua<br>
+<br>
+</code><br>
+<span style="font-weight: bold;">REMEMBER - If you are
+running in Windows the slash ("/") goes the other way, so do
+"bin\murgaLua".<br>
+</span><br>
+Anyway, you'll see a nice FLTK message box with "Hello World", and the
+same on the standard Lua console output.<br>
+<br>
+Linux users may want to copy "murgaLua" to "/usr/bin", and put the
+following as the first line of the program :<code><br>
+#!/usr/bin/murgaLua<br>
+<br>
+</code><br>
+Not you can make the script executable (chmod), and run it like a
+standard Linux utility.<br>
+<h3>Something more serious</h3>
+<p>So that last example was kinda lame ... How about a nice
+window and some buttons ?<br>
+<br>
+OK, create a file called "step1.lua" and type this code in :</p>
+<p><code><br>
+window = fltk:Fl_Window(505, 145, "My first little app")<br>
+<br>
+fltk:Fl_Button(5, 5, 310, 135, "My First Button")<br>
+fltk:Fl_Button(320, 65, 180, 35, "Load a picture")<br>
+fltk:Fl_Button(320, 105, 180, 35, "Quittin Time")<br>
+<br>
+window:show()<br>
+Fl:run()<br>
+<br>
+</code><br>
+Now run the file like we did before ("bin/murgaLua step1.lua") ...</p>
+<p>This is what you should see :<br>
+</p>
+<p style="text-align: center;"><img style="width: 511px; height: 177px;" alt="Step 1" src="images/Step1.png"></p>
+<p><br>
+Umm, OK ... We now have a basic UI.</p>
+<p>It should be fairly obvious how we created the buttons : we
+looked up "Fl_Window", and "Fl_Button" in the FLTK reference and found
+the parameters we needed.</p>
+<p>Then we worked how where and how big we wanted everything and
+put the calls together ...</p>
+<p>There is a much better/faster way to do this ... But that's in
+the next tutorial :-)</p>
+<p>Anyway, those controls don't do anything yet, so copy your
+file to "step2.lua" and make the changes below (marked in red) :</p>
+<p><code><br>
+window = fltk:Fl_Window(505, 145, "My first little app")<br>
+<br style="color: rgb(102, 0, 204);">
+<span style="color: rgb(153, 0, 0);">-- Step one, we have
+to assign our button to a variable in order</span><br style="color: rgb(153, 0, 0);">
+<span style="color: rgb(153, 0, 0);">-- to be able to do
+things with it ...</span><br style="color: rgb(153, 0, 0);">
+<span style="color: rgb(153, 0, 0);">firstButton =
+fltk:Fl_Button(5, 5, 310, 135, "My First Button")</span><br>
+fltk:Fl_Button(320, 65, 180, 35, "Load a picture")<br>
+fltk:Fl_Button(320, 105, 180, 35, "Quittin Time")<br>
+<br>
+<span style="color: rgb(153, 0, 0);">-- Step two, add a
+slider and get it change another control</span><br style="color: rgb(153, 0, 0);">
+<span style="color: rgb(153, 0, 0);">slider =
+fltk:Fl_Slider(320, 10, 180, 30, "Size Me")</span><br style="color: rgb(153, 0, 0);">
+<span style="color: rgb(153, 0, 0);">slider:type(1)</span><br style="color: rgb(153, 0, 0);">
+<span style="color: rgb(153, 0, 0);">slider:range(5, 55)</span><br style="color: rgb(153, 0, 0);">
+<span style="color: rgb(153, 0, 0);">slider:step(1)</span><br style="color: rgb(153, 0, 0);">
+<span style="color: rgb(153, 0, 0);">slider:value(firstButton:labelsize())</span><br style="color: rgb(153, 0, 0);">
+<br style="color: rgb(153, 0, 0);">
+<span style="color: rgb(153, 0, 0);">slider:callback(</span><br style="color: rgb(153, 0, 0);">
+<span style="color: rgb(153, 0, 0);">function(slider)</span><br style="color: rgb(153, 0, 0);">
+<span style="color: rgb(153, 0, 0);">firstButton:labelsize(slider:value())</span><br style="color: rgb(153, 0, 0);">
+<span style="color: rgb(153, 0, 0);">firstButton:label("My
+size is " .. slider:value())</span><br style="color: rgb(153, 0, 0);">
+<span style="color: rgb(153, 0, 0);">firstButton:redraw()</span><br style="color: rgb(153, 0, 0);">
+<span style="color: rgb(153, 0, 0);">end)</span><br>
+<br>
+window:show()<br>
+Fl:run()<br>
+<br>
+</code><br>
+If you made the changes correctly you should be able to run the file
+and see the following (try moving the slider) :</p>
+<p style="text-align: center;"><img style="width: 511px; height: 177px;" alt="Step 2" src="images/Step2.png"></p>
+So now we have added some behavior, as you see we had to assign our
+controls to variables in order to anything with them.<br>
+<br>
+Still not very impressive ... Let's try to put some more complex
+behavior in there.
+<p>Copy your file to "step2.lua" and make these changes (marked
+in red again) :</p>
+<p><code><br>
+window = fltk:Fl_Window(505, 145, "My first little app");<br>
+<br>
+firstButton = fltk:Fl_Button(5, 5, 310, 135, "My First Button");<br>
+<span style="color: rgb(153, 0, 0);">-- Step three, we
+name everything</span><br style="color: rgb(153, 0, 0);">
+<span style="color: rgb(153, 0, 0);">loadImage =
+fltk:Fl_Button(320, 65, 180, 35, "Load a picture");</span><br style="color: rgb(153, 0, 0);">
+<span style="color: rgb(153, 0, 0);">quitButton =
+fltk:Fl_Button(320, 105, 180, 35, "Quittin Time");</span><br>
+<br>
+slider = fltk:Fl_Slider(320, 10, 180, 30, "Size Me");<br>
+slider:type(1)<br>
+slider:range(5, 55)<br>
+slider:step(1)<br>
+slider:value(firstButton:labelsize())<br>
+<br>
+slider:callback(<br>
+function(slider)<br>
+firstButton:labelsize(slider:value())<br>
+firstButton:label("My size is " .. slider:value())<br>
+firstButton:redraw()<br>
+end)<br>
+<br>
+<span style="color: rgb(153, 0, 0);">-- Step four, add a
+callback that we can share.</span><br style="color: rgb(153, 0, 0);">
+<span style="color: rgb(153, 0, 0);">function
+quit_callback(object)</span><br style="color: rgb(153, 0, 0);">
+<span style="color: rgb(153, 0, 0);">if fltk.fl_ask("Are
+you sure ?") &gt;= 1 then</span><br style="color: rgb(153, 0, 0);">
+<span style="color: rgb(153, 0, 0);">window:hide()</span><br style="color: rgb(153, 0, 0);">
+<span style="color: rgb(153, 0, 0);">end</span><br style="color: rgb(153, 0, 0);">
+<span style="color: rgb(153, 0, 0);">end</span><br>
+<br>
+<span style="color: rgb(153, 0, 0);">-- Step five, assign
+the callback to two objects.<br>
+window:callback(quit_callback)</span><br style="color: rgb(153, 0, 0);">
+<span style="color: rgb(153, 0, 0);">quitButton:callback(quit_callback)</span><br>
+<br>
+<span style="color: rgb(153, 0, 0);">-- Step six, create a
+callback function to play with pictures</span><br style="color: rgb(153, 0, 0);">
+<span style="color: rgb(153, 0, 0);">function
+loadImage_callback(object)</span><br style="color: rgb(153, 0, 0);">
+<span style="color: rgb(153, 0, 0);">-- Required before we
+can use some of the image APIs</span><br style="color: rgb(153, 0, 0);">
+<span style="color: rgb(153, 0, 0);">fltk.fl_register_images()</span><br style="color: rgb(153, 0, 0);">
+<span style="color: rgb(153, 0, 0);">-- Open a nice file
+chooser to pick an image.</span><br style="color: rgb(153, 0, 0);">
+<span style="color: rgb(153, 0, 0);">fileName =
+fltk.fl_file_chooser("Choose a picture", "Image Files
+(*.{bmp,gif,jpg,png})", nil, nil)</span><br style="color: rgb(153, 0, 0);">
+<span style="color: rgb(153, 0, 0);">-- Load and create an
+image object</span><br style="color: rgb(153, 0, 0);">
+<span style="color: rgb(153, 0, 0);">image =
+Fl_Shared_Image.get(fileName)</span><br style="color: rgb(153, 0, 0);">
+<span style="color: rgb(153, 0, 0);">-- Assign it to a
+control and make sure the UI portion is redrawn.</span><br style="color: rgb(153, 0, 0);">
+<span style="color: rgb(153, 0, 0);">firstButton:image(image)</span><br style="color: rgb(153, 0, 0);">
+<span style="color: rgb(153, 0, 0);">firstButton:redraw()</span><br style="color: rgb(153, 0, 0);">
+<span style="color: rgb(153, 0, 0);">end</span><br style="color: rgb(153, 0, 0);">
+<br style="color: rgb(153, 0, 0);">
+<span style="color: rgb(153, 0, 0);">-- Step seven, assign
+the image load function to the "Load a picture" button</span><br style="color: rgb(153, 0, 0);">
+<span style="color: rgb(153, 0, 0);">loadImage:callback(loadImage_callback)</span><br>
+<br>
+window:show()<br>
+Fl:run()<br>
+<br>
+<br>
+</code><br>
+Now when you run the program click on the "Load a picture" button and
+choose the "examples/littlePic.gif" file ... You should see this :</p>
+<p style="text-align: center;"><img style="width: 511px; height: 177px;" alt="Step 3" src="images/Step3.png"></p>
+OK, now this a little more like it, we created a little function to
+choose and load a picture and we displayed it in one of our controls.<br>
+<br>
+We are also using two dialogs (asking a question, and choosing a file),
+and we hooked into the window so that we can ask the user if he really
+wants to exit.<br>
+<br>
+Now lets see if we can make this whole UI design easier (on to FLUID)
+...<br>
+<h2>Advanced techniques</h2>
+<h3>Using FLUID to generate our UI</h3>
+<p>Although being able to use FLTK from within Lua is great it is
+a pain to have to learn all those widgets and work out the coordinates
+and sizes ...</p>
+<p>Wouldn't it be nice if we could use the UI designer FLTK has
+to create our UI's ?</p>
+<p>The problem is that FLTK is a C++ toolkit, and as a
+consequence C++ is what FLUID generates.</p>
+<p>Enter "convertFluidToMurgaLua" ... My effort at a generic
+FLUID C++ to Lua converter :-)</p>
+<p>So far it's worked with all the UI's I've created, so lets
+take a look at how to create UI's in FLUID for Lua.</p>
+<p>Run the FLUID executable that you'll find in "bin", and you
+should see something like this :</p>
+<p style="text-align: center;"><img style="width: 798px; height: 200px;" alt="The FLUID UI" src="images/FLUID_MainScreen.png"></p>
+<p style="font-weight: bold;">Note : It is all too easy to
+"loose" the widget bin, in this case go to the "Edit / Show Widget Bin"
+menu or hit CTRL-B.</p>
+<p>Anyway, the FLTK distribution contains a tutorial on how to
+use FLUID, but in order to use it for LUA code generation you'll be
+better off following these simple instructions. Lets go through it
+step-by-step ...</p>
+<p><span style="font-weight: bold;">Creating the
+Window</span></p>
+<ol>
+<li>First of all start FLUID (duh!)</li>
+<li>Click the "Function" button in the "Widget Bin".</li>
+<li>Just press OK in the "Function/Method Properties" dialog
+that appears.</li>
+<li>Now click the "Window" button in the "Widget Bin".</li>
+<li>Double click inside the new window that was created.</li>
+<li>Type "My first window" as the "Label:" for the new window.<br>
+<span style="font-style: italic;">(You may want to
+re-size the created window so you can see the title).</span></li>
+</ol>
+<p style="text-align: center;"><img style="width: 798px; height: 335px;" alt="The FLUID UI 2" src="images/FLUID_MainScreen2.png"></p>
+<p>And now it's time to :</p>
+<p style="font-weight: bold;">Put some stuff on the window
+:</p>
+<ol>
+<li>Lets start by making sure we have clicked back on the
+window we created.</li>
+<li>Click the "Return Button" button in the "Widget Bin", enter
+a caption of "A return button", press ENTER, and resize according the
+the screen shot.</li>
+<li>Click the "Check Browser" button in the "Widget Bin", enter
+a caption of "Some Choices", press ENTER, and and resize to allow room
+for the input field.</li>
+<li>Now click the "Input" button in the "Widget Bin" and press
+ENTER,.</li>
+<li>Place the input button between the "Check Browser" and the
+"Return Button" so that things look like the do in the screen shot.</li>
+<li>Try double clicking on the input field, you'll see that the
+"Properties" dialog comes up, you can lose it again by pressing ENTER.<span style="font-style: italic;"><br>
+</span></li>
+</ol>
+<p style="text-align: center;"><img style="width: 798px; height: 335px;" alt="The FLUID UI 3" src="images/FLUID_MainScreen3.png"></p>
+<p style="font-weight: bold;">Create the files</p>
+<p>OK, now you can save your design and generate the C++ :</p>
+<ul>
+<li>Go to the "File" menu and click "Save As ..." (or press
+SHIFT-CTRL-S).<br>
+<span style="font-style: italic;">(I recommend saving
+to the "examples" directory).</span></li>
+<li>Navigate to the correct directory and enter "MyApp.f" as
+the filename.</li>
+<li>Go back to the "File" menu and click "Write Code ..." (or
+press SHIFT-CTRL-C).</li>
+<li>Two files, "MyApp.cxx" and "MyApp.h" will be created in the
+same directory you saved "MyApp.f".</li>
+</ul>
+<p>Now we have C++ code we can generate LUA from it, go to the
+command line and try the following (if you saved to the "examples"
+directory) :</p>
+<p><code><br>
+$ ../bin/Windows/murgaLua.exe ../tools/convertFluidToMurgaLua.lua
+MyApp.cxx &gt; MyApp.lua<br>
+$ ../bin/Windows/murgaLua.exe MyApp.lua<br>
+<br>
+</code><br>
+The first command creates a LUA file from the C++ file.</p>
+<p>So after running the second line you should see something like
+this (depending on your design) :</p>
+<p style="text-align: center;"><img style="width: 172px; height: 197px;" alt="Our program" src="images/MyApp.png"></p>
+The contents of "MyApp.lua" should be something like this :
+<p><code><br>
+do local object = fltk:Fl_Double_Window(166, 165, "My App");<br>
+window = object;<br>
+fltk:Fl_Return_Button(5, 130, 155, 30, "A return button");<br>
+fltk:Fl_Check_Browser(5, 5, 155, 70, "Some choices");<br>
+fltk:Fl_Input(5, 95, 155, 30);<br>
+end<br>
+window:show();<br>
+Fl:run()<br>
+<br>
+</code><br>
+The next thing is to put some logic ... Make the UI do something.</p>
+<p>For example we could :</p>
+<ol>
+<li>Name the objects so that can manipulate them (as seen in
+previous examples).</li>
+<li>Add some values to the controls.</li>
+<li>Maybe add some callback logic so that we can see things
+happen.</li>
+</ol>
+<p>After about 5 minutes things would look like this :</p>
+<p><code><br>
+do local object = fltk:Fl_Double_Window(166, 165, "My App");<br>
+window = object;<br>
+fltk:Fl_Return_Button(5, 130, 155, 30, "A return button");<br>
+-- Step one, name the objects<br>
+myOptions = fltk:Fl_Check_Browser(5, 5, 155, 70, "Some choices");<br>
+myField = fltk:Fl_Input(5, 95, 155, 30);<br>
+<br>
+-- Step two, add some values to the check browser ...<br>
+myOptions:add("Shower and shave")<br>
+myOptions:add("Breakfast")<br>
+myOptions:add("Watch TV")<br>
+myOptions:add("Go to work")<br>
+myOptions:add("Call the plumber")<br>
+<br>
+-- Step tree, put in some code to react to a value-change<br>
+myField:callback(<br>
+function(myField)<br>
+fltk.fl_message("Changed the value to \"" .. myField:value() .. "\"")<br>
+end)<br>
+end<br>
+window:show();<br>
+Fl:run();<br>
+<br>
+</code><br>
+This is a simple example, and hopefully took just a few minutes to
+complete.</p>
+Once you have the code above you should see the following when running
+it.
+<p style="text-align: center;"><img style="width: 172px; height: 197px;" alt="Our program" src="images/MyApp2.png"></p>
+<p style="text-align: left;">Now on to something more
+complicated.</p>
+<h3>Let's build a tiny network chat application</h3>
+<p>This is a tutorial I haven't had time to write yet ...
+However, the code was so easy that it didn't take long.</p>
+<p>You'll have to run two instances of this program, one as a
+server (first), and then one as a client.<br>
+<br>
+Here is the code :</p>
+<p><code><br>
+#!/usr/bin/murgaLua<br>
+<br>
+-- Define the constants<br>
+host = "127.0.0.1"<br>
+port = 6969<br>
+<br>
+-- Ask what mode we want to run in<br>
+if fltk.fl_choice("Are you a client or a server (start the server
+first)",<br>
+"Client", "Server", nil) &gt;= 1<br>
+then<br>
+server = assert(socket.bind("*", port))<br>
+serverMode = "server"<br>
+fltk.fl_message("Chat window will appear when a connection is
+received\n" ..<br>
+"Listening on PORT : " .. port .. "...")<br>
+print ("Listening on PORT '" .. port .. "', please connect with a
+client.")<br>
+io.flush()<br>
+client = server:accept()<br>
+else<br>
+client = assert(socket.connect(host, port))<br>
+serverMode = "client"<br>
+end<br>
+<br>
+-- If you are going to use a callback it has to be defined before it's
+used.<br>
+function quit_callback(w)<br>
+if fltk.fl_choice("Are you sure you want to EXIT ?", "No", "Yes", nil)
+&gt;= 1 then<br>
+window:hide()<br>
+os.exit()<br>
+end<br>
+end<br>
+<br>
+window = fltk:Fl_Window(295, 132, "Tiny Chat " .. serverMode)<br>
+window:callback(quit_callback)<br>
+<br>
+messageInput = fltk:Fl_Input(5, 80, 285, 25);<br>
+messageOutput = fltk:Fl_Browser(5, 5, 285, 70);<br>
+quitButton = fltk:Fl_Button(230, 105, 60, 25, "Quit");<br>
+sendButton = fltk:Fl_Return_Button(5, 105, 70, 25, "Send");<br>
+<br>
+quitButton:callback(quit_callback)<br>
+<br>
+sendButton:callback(<br>
+function(sendButton)<br>
+messageOutput:add("Sent : " .. messageInput:value())<br>
+messageOutput:bottomline(messageOutput:size())<br>
+assert(client:send(messageInput:value() .. "\n"))<br>
+<br>
+messageInput:value("")<br>
+<br>
+end<br>
+)<br>
+<br>
+window:show()<br>
+<br>
+-- client:setoption("tcp-nodelay", true)<br>
+client:settimeout(0.10)<br>
+<br>
+while 1 do<br>
+<br>
+line, err = client:receive('*l')<br>
+<br>
+if (line)<br>
+then<br>
+messageOutput:add("Recv : " .. line)<br>
+messageOutput:bottomline(messageOutput:size())<br>
+end<br>
+<br>
+Fl:check()<br>
+Fl:wait(1)<br>
+<br>
+end<br>
+<br>
+</code><br>
+The eagled eyed who've looked at the FLTK docs will have noticed that
+there is a "Timeout" mechanism that seems better suited to this kinda
+thing ... However, I that is part of the 5% of FLTK that I haven't
+ported yet, so you'll have to wait until the next release to use it ;-).</p>
+Anyway, here is what the app above looks like :
+<p style="text-align: center;"><img style="width: 420px; height: 244px;" alt="tinyChat" src="images/tinyChat.png"></p>
+<h3>Things to watch out for</h3>
+I have implemented most of the FLTK API, <span style="font-weight: bold;">except</span> for the GL
+functions and an ever decreasing set of methods.<br>
+<br>
+Although there are about 130 methods on my list they represent an
+insignificant portion of the FLTK API (apart from timeout functions,
+which I'd like to support in a future release).<br>
+<br>
+For more info on what's available in FLTK look <a href="fltk/index.html">here</a>.<br>
+<h2>Reference</h2>
+<h3>XML functionality</h3>
+<h4 id="saveToXml">saveToXml( fileName, variableName )</h4>
+<p>Usage:</p>
+<code><br>
+local table_1 = {firstVar=1; secondVar=2; thirdVar="abc"}<br>
+local myVar = "This is a string"<br>
+local table_2 = {myVar, "Test String", true, table_1}<br>
+<br>
+local myTable = {firstKey="simpleItem"; secondKey=table_2}<br>
+<br>
+murgaLua.saveToXml("foo.xml", myTable)<br>
+<br>
+</code>
+<p><br>
+As we see in the example we have defined a series of data structures
+and wrapped a table around them ...</p>
+<p>And the function allows you to save all this data to a human
+readable XML file.</p>
+<h4 id="loadFromXml">loadFromXml( fileName )</h4>
+<p>Usage:</p>
+<code><br>
+local loadedTable = murgaLua.loadFromXml("foo.xml")<br>
+<br>
+</code><br>
+Returns a table will all the data just like we saved it before.<br>
+<h4 id="importXmlFile">importXmlFile( fileName )</h4>
+<p>Usage:</p>
+<code><br>
+local xmlTable = murgaLua.importXmlFile("test.xml")<br>
+<br>
+print( "Root Element Name : " .. xmlTable[1].name )<br>
+<br>
+</code><br>
+Loads and parses any valid XML file <span style="font-style: italic; font-weight: bold;">(see
+xmlImport.lua test)</span>.
+<h4 id="importXmlString">importXmlString( fileName )</h4>
+<p>Usage:</p>
+<code><br>
+local xmlTable = murgaLua.importXmlString("&lt;test
+height=2&gt;text&lt;/test&gt;")<br>
+<br>
+print( "Element Name&nbsp;&nbsp;&nbsp;&nbsp; : " ..
+xmlTable[1].name )<br>
+print( "Element contents : " .. xmlTable[1][1])<br>
+print( "Attribute Name&nbsp;&nbsp; : " ..
+next(xmlTable[1].attr))<br>
+print( "Attribute Value&nbsp; : " ..
+xmlTable[1].attr[next(xmlTable[1].attr)])<br>
+<br>
+</code><br>
+Loads and parses any valid XML file <span style="font-style: italic; font-weight: bold;">(see
+xmlImport.lua test)</span>.<br>
+<h4 id="exportXml">exportXml(
+xmlTable,&nbsp;fileHandle )</h4>
+<p>Usage:</p>
+<code><br>
+diskfile = io.open("test.xml", "w")<br>
+murgaLua.exportXml(xmlTable, diskfile)<br>
+diskfile:close()<br>
+<br>
+</code><br>
+Saves the structure created by importXml* ... <span style="font-style: italic;">This has to be better documented</span>
+<span style="font-style: italic; font-weight: bold;">(see
+xmlImport.lua test)</span>.<br>
+<h4 id="exportXml">exportXml(
+xmlTable,&nbsp;fileHandle )</h4>
+<p>Usage:</p>
+<code><br>
+diskfile = io.open("test.xml", "w")<br>
+murgaLua.exportXml(xmlTable, diskfile)<br>
+diskfile:close()<br>
+<br>
+</code><br>
+Saves the structure created by importXml* ... <span style="font-style: italic;">This has to be better documented</span>
+<span style="font-style: italic; font-weight: bold;">(see
+xmlImport.lua test)</span>.<br>
+<h4 id="findXmlNode">findXmlNode( xmlTable, pathToNode )</h4>
+<p>Usage:</p>
+<code><br>
+subStruct = murgaLua.findXmlNode(xmlTable, "/example/subStruct")<br>
+<br>
+</code><br>
+Allows you to search for the part of the XML table that you are
+interested in&nbsp;<span style="font-style: italic; font-weight: bold;">(see
+xmlImport.lua test)</span>.<br>
+<h4 id="findNextXmlNode">findNextXmlNode( xmlTable,
+pathToNode )</h4>
+<p>Usage:</p>
+<code><br>
+subStruct = murgaLua.findXmlNode(xmlTable, "/example/subStruct")<br>
+repeatingNode = murgaLua.findNextXmlNode(subStruct, "repeatingNode")<br>
+<br>
+</code><br>
+Allows you to get nodes that repeat inside an XML structure <span style="font-style: italic; font-weight: bold;">(see
+xmlImport.lua test)</span>.<br>
+<h3>Utility functions</h3>
+These functions are included to ease debugging and make filtering
+tables a little easier.<br>
+<h4 id="getHostOsName">getHostOsName()</h4>
+<p>Usage:</p>
+<code><br>
+murgaLua.getHostOsName()<br>
+<br>
+</code>
+<p><br>
+Returns the OS murgaLua was build for, currently&nbsp;one of
+"linux", "windows" or "macos".</p>
+<h4 id="sleep">sleep(miliseconds)</h4>
+<p>Usage:</p>
+<code><br>
+murgaLua.sleep(1000)<br>
+<br>
+</code>
+<p><br>
+Sleeps for the specified number of miliseconds without taxing the
+system.</p>
+<h4 id="newIoString">newIoString()</h4>
+<p>Usage:</p>
+<code><br>
+function write_squares_table(file)<br>
+&nbsp; for i = 1,10 do<br>
+&nbsp;&nbsp;&nbsp; file:write(i, " ", i*i, "\n")<br>
+&nbsp; end<br>
+end<br>
+<br>
+-- write to file:<br>
+<br>
+diskfile = io.open("squares", "w")<br>
+write_squares_table(diskfile)<br>
+diskfile:close()<br>
+<br>
+-- write to string:<br>
+<br>
+stringfile = murgaLua.newIoString()<br>
+write_squares_table(stringfile)<br>
+print(stringfile:getstring())<br>
+<br>
+</code>
+<p><br>
+Creates a new iostring - need to document more <span style="font-style: italic; font-weight: bold;">(see
+xmlImport.lua test)</span>.</p>
+<h4 id="createFltkTimer">createFltkTimer()</h4>
+<p>Usage:</p>
+<code><br>
+timer = murgaLua.createFltkTimer()<br>
+timer:callback(sleep_callback)<br>
+<br>
+</code>
+<p><br>
+Allows you to do neat timing tricks on FLTK <span style="font-style: italic;">(needs more documentaion)</span>,
+<span style="font-weight: bold; font-style: italic;">(see
+timerTest)</span>.</p>
+<h4 id="printDebug">printDebug( table, indentLevel )</h4>
+<p>Usage:</p>
+<code><br>
+murgaLua.printDebug(myTable)<br>
+<br>
+</code>
+<p><br>
+Will navigate the whole table and print ALL of it's contents, which can
+be pretty useful for debug purposes.</p>
+<h4 id="filterTable">filterTable( path )</h4>
+<p>Usage:</p>
+<code><br>
+copyTable = murgaLua.filterTable (myTable, function)<br>
+<br>
+</code>
+<p><br>
+Returns a table containing the data for which the function returns
+"true" :</p>
+<p><code><br>
+myTable =<br>
+{<br>
+bob = { age = 22, sex = "male", surname = "Smith" },<br>
+tracy = { age = 25, sex = "female", surname = "Smith" },<br>
+john = { age = 32, sex = "male", surname = "Murga" },<br>
+}<br>
+<br>
+copyTable = murgaLua.filterTable (myTable, function (myValue) return
+myValue.surname == "Smith" end)<br>
+murgaLua.printDebug(myTable)<br>
+<br>
+</code><br>
+The output of which would be :</p>
+<code><br>
+[tracy] =&gt; table<br>
+(<br>
+[surname] =&gt; Smith<br>
+[age] =&gt; 25<br>
+[sex] =&gt; female<br>
+)<br>
+[bob] =&gt; table<br>
+(<br>
+[surname] =&gt; Smith<br>
+[age] =&gt; 22<br>
+[sex] =&gt; male<br>
+)<br>
+<br>
+</code>
+<p>Courtesy of our other new function printDebug <span style="font-weight: bold; font-style: italic;">(see
+murgaLuaLib.lua example)</span>.</p>
+<h3>Networking and Database APIs</h3>
+<span style="font-weight: bold; font-style: italic;">Need
+to work on this<br>
+<br>
+</span> Test programs can be found <a href="../examples">here</a>.<br>
+<br>
+Here are the links to the included documentation :<br>
+<br>
+<ul>
+<li>LuaSocket
+(http://www.cs.princeton.edu/~diego/professional/luasocket/).<br>
+The documentation can be found <a href="../3rd-party/luasocket-2.0.2-MOD/doc/introduction.html">here</a>.<br>
+<br>
+</li>
+<li>LuaSqlite (http://luasqlite.luaforge.net/lsqlite.html)
+provided a solid and light ANSI SQL RDBMS.<br>
+The documentation can be found <a href="../3rd-party/lsqlite3-6-MOD/doc/lsqlite3.html">here</a>.<br>
+<br>
+</li>
+</ul>
+The&nbsp;modified source for these two Lua bindings is included in
+the murgaLua distribution.
+<h3>Copas and LuaFileSystem</h3>
+<span style="font-weight: bold; font-style: italic;">Need
+to work on this</span><br>
+<br>
+Copas documentation is&nbsp;<a href="../3rd-party/copas-1.1.1/doc/us/manual.html">here</a>.<br>
+LuaFileSystem documentation is <a href="../3rd-party/luafilesystem-1.3.0/doc/us/manual.html">here</a>.
+<h3>Other interesting stuff</h3>
+Nothing here yet.<span style="font-style: italic;"><span style="font-weight: bold;"><br>
+</span></span><br>
+</body></html>
