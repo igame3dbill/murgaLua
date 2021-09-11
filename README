@@ -1,0 +1,16 @@
+murgaLua Version 0.6.4
+Copyright (C) 2006-8 John Murga
+
+See file "LICENSE" for restrictions.
+
+Notes
+=====
+
+Building murgaLua
+-----------------
+
+Several scripts can be found under "tools/misc", that are used when doing full
+builds of murgaLua for the different platforms.
+
+Cheers
+JohnM
