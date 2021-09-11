@@ -1,0 +1,65 @@
+body        { font-size: 80%; }
+td          { border-bottom: 1px solid #ddd; }
+em          { font-style: italic; background: none; }
+ul          { list-style-type: circle; }
+p img       { float: none; margin: 0 0 0 0; padding: 0 0 0 0; }
+a:link      { color: #555; text-decoration: none; }
+a:visited   { color: #777; text-decoration: none; }
+a:hover     { color: #333; text-decoration: none; }
+a:active    { color: #111; text-decoration: none; }
+
+.box        { border: 1px solid #999999; }
+
+del         { background-color: rgb( 255, 255, 102 ); text-decoration: line-through; }
+ins         { background-color: rgb( 153, 204, 153  ); text-decoration: none; }
+
+ul          { list-style:circle; }
+ol          { list-style-type: decimal; }
+ol ol       { list-style:upper-alpha; }
+ol ol ol    { list-style:lower-roman; }
+ol ol ol ol { list-style:lower-alpha; }
+ul ul, ol ol, ul ol, ol ul { margin-bottom:0; }
+
+table       { width: auto; }
+
+td          { vertical-align:top; }
+
+li img      { vertical-align: text-top; }
+
+.label      { font-size: smaller; }
+.preview    { background-color: rgb( 255, 255, 204 ); }
+
+input       { border: 1px solid #999999; }
+
+input[type=file]
+{
+    border: none;
+}
+
+input[type=image]
+{
+    border: none;
+}
+
+input[type=submit]
+{
+    border: 1px solid #999999;
+    padding: 0.25em;
+    background-color: #FFFFFF;
+    color: #333333;
+    font-weight: bold;
+}
+
+input[type=submit]:hover 
+{
+    background: #ccb;
+}
+
+input[type=submit]:active
+{
+    color: rgb( 102, 102, 102 );
+    border: 1px solid #CCCCCC;
+    border-top-color: #999999;
+    border-left-color: #999999;
+}
+

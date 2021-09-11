@@ -1,0 +1,4 @@
+a:link:after, 
+a:visited:after { display: none; }
+
+.navigation     { display: none; }
