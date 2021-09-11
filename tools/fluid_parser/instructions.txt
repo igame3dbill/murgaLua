@@ -1,0 +1,1 @@
+flex  fluid.l  && yacc -dv fluid.y && gcc lex.yy.c -o fluidparser
