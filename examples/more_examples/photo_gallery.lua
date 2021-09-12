@@ -1,34 +1,67 @@
 -- Slideshow 
 -- Based on code by mikshaw (http://damnsmalllinux.org/cgi-bin/forums/ikonboard.cgi)
-pathToMurgaLua = string.gsub(murgaLua_ExePath,"(.*)/.*","%1") .. "/"
-gameroot=pathToMurgaLua
--- will return correct path if cd to scripts path prior to running script
-CurDir = lfs.currentdir() .. "/"
-print(CurDir)
+-- 09 12 2021 updated for lua files system and modified for Windows OS with extra backlashes
+-- assumes you've changed the directory to the one where the script resides
+-- and the 'images' folder is in the same folder as the script
+
 ww=400 --window width
 wh=400 --window height
 pw=ww-40 -- photo dims
 ph=ww-160
 sh=90 -- scroll height
-images={}
-inc=0
-if lfs.attributes(CurDir.."images") ~= nil then
-dir=CurDir.."Images/" -- ending slash is vital
-else
-dir=pathToMurgaLua.."Images/"
+images = {}
+imageList = {}
+
+cDirectory=lfs.currentdir()
+
+function listFolders(path)
+local folderList=""
+    for file in lfs.dir(path) do
+        
+        if file ~= "." and file ~= ".." then
+            local f = path..'/'..file
+            local attr = lfs.attributes (f)
+            assert (type(attr) == "table")
+             if attr.mode == "directory" then 
+               
+             folderList=folderList..file.."\n"
+             end   
+        end
+    end
+    return folderList
 end
+
+function listFiles(path, t)
+local fileList=""
+--local images = {}
+    for file in lfs.dir(path) do
+        if file ~= "." and file ~= ".." then
+            local f = path..'/'..file
+            local attr = lfs.attributes (f)
+            assert (type(attr) == "table")
+             if attr.mode == "file" then 
+              fileList=fileList..file.."\n"
+			  table.insert(images,file)
+              end   
+        end
+    end
+	print(t)
+	if t == "table" then 
+	return images
+	else
+    return fileList
+	end
+end
+
+--dir="./pix/" -- ending slash is vital ..this was for unix systems
+dir = "\\images\\"
+ipath= cDirectory..dir -- ending slash is vital
+
+images = listFiles(ipath,"table")  
+--images = murgaLua.readDirectory(dir) --  deprecated at some point
+
 
 fltk.fl_register_images()
-
-for file in lfs.dir(dir) do
-dn,nd=string.find(file,"%.")
-if dn > 2 and file ~= nil then 
-print(file,dn,inc)
-images[inc] = file
-inc=inc+1
-end
-end
-
 
 function scale_touchingBoundingRect(w,h,maxW,maxH)
   if math.max(w,h) == w then
@@ -49,8 +82,8 @@ function scale_ratio(w, h, ratio)
 end
 
 function get_image_data(self)
-  for i=0,table.getn(images) do
-    if self:tooltip() == dir..images[i] then -- find the right image
+  for i=1,table.getn(images) do
+    if self:tooltip() == ipath..images[i] then -- find the right image
       iw= icon[i]:w()
       ih = icon[i]:h()
       cw,ch=scale_touchingBoundingRect(iw,ih,pw,ph)
@@ -79,25 +112,23 @@ scroll:color(55)
 pack=fltk:Fl_Pack(20,290,pw,sh)
 pack:type(1)
 pack:spacing(10)
-icon={}; butt={}
+icon={""}; butt={""}
 row=1;col=1
 -- since the images table contains more than just images (*.lnk gets in too)
 -- i'm building the icons from specific items in the table.
-for i=0,table.getn(images) do
-if images[i] ~= nil then 
+for i=1,table.getn(images) do
   if string.find(images[i],".png",-4,plain) or string.find (images[i],".jpg",-4,plain)
   then
-    icon[i]=Fl_Shared_Image.get(dir..images[i])
+    icon[i]=Fl_Shared_Image.get(ipath..images[i])
     butt[i]=fltk:Fl_Button(0,0,80,80)
     butt[i]:align(fltk.FL_ALIGN_CLIP)
     cw,ch=scale_touchingBoundingRect(icon[i]:w(),icon[i]:h(),200,75)
     butt[i]:image(icon[i]:copy(cw,ch))
-    butt[i]:tooltip(dir..images[i])
+    butt[i]:tooltip(ipath..images[i])
     butt[i]:callback(get_image_data)
     butt[i]:color(55)
     butt[i]:box(fltk.FL_NO_BOX)
   end
- end
 end
 w:show()
 Fl:run()
